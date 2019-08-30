@@ -54,7 +54,7 @@ class Products extends CI_Controller
     {
         if (!isset($id)) show_404();
         
-        if ($this->product_model->delete($id)) {
+        if ($this->Product_model->delete($id)) {
             redirect(site_url('admin/products'));
         }
     }
