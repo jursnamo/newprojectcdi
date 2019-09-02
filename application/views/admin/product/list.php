@@ -51,10 +51,12 @@
 										<td class="small">
 											<?php echo substr($product->description, 0, 120) ?>...</td>
 										<td width="250">
+											<a href="<?php echo site_url('admin/products/detail/'.$product->product_id) ?>"
+											 class="btn btn-small"><i class="fas fa-info-circle"></i> </a>
 											<a href="<?php echo site_url('admin/products/edit/'.$product->product_id) ?>"
-											 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+											 class="btn btn-small"><i class="fas fa-edit"></i> </a>
 											<a onclick="deleteConfirm('<?php echo site_url('admin/products/delete/'.$product->product_id) ?>')"
-											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> </a>
 										</td>
 									</tr>
 									<?php endforeach; ?>

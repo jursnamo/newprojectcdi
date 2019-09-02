@@ -7,8 +7,6 @@ class Jenisbuah_model extends CI_Model
     public $jenis_id;
     public $name;
     public $description;
-
-
 public function rules ()
 {
     return [
@@ -48,15 +46,6 @@ public function update()
     $this->description = $post["description"];
     $this->db->update($this->_table, $this, array('jenis_id'=> $post['id']));
 }
-// public function update()
-// {
-//     $post = $this->input->post();
-//     $this->product_id = $post["id"];
-//     $this->name = $post["name"];
-//     $this->price = $post["price"];
-//     $this->description = $post["description"];
-//     $this->db->update($this->_table, $this, array('product_id' => $post['id']));
-// }
 public function delete($id)
 {
     return $this->db->delete($this->_table, array("jenis_id" => $id));

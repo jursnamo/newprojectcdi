@@ -58,4 +58,11 @@ class Products extends CI_Controller
             redirect(site_url('admin/products'));
         }
     }
+    public function detail($id=null)
+    {
+        if (!isset($id)) redirect('admin/products');
+        $product = $this->Product_model;
+        $data["product"] = $product->getById($id);
+        $this->load->view("admin/product/form_detail", $data);
+    }
 }
