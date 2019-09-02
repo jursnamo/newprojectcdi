@@ -32,9 +32,11 @@
 							Back</a>
 					</div>
 					<div class="card-body">
-                                <label for="name">Name :</label> <?php echo $product->name ?>
-                                <label for="name">Price :</label> <?php echo $product->price ?>
-                                <label for="name">Desription :</label> <?php echo $product->description ?>
+                 
+                                <p> Name :   <?php echo $product->name ?></p>
+                                <p> Price :   <?php echo $product->price ?></p>
+                                <p> Desription :   <?php echo $product->description ?></p>
+                                <p> Desription : <img src="<?php echo base_url('upload/product/'.$product->image) ?>" width="800" />
 					</div>
 
 					<div class="card-footer small text-muted">
