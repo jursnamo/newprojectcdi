@@ -31,6 +31,7 @@
 									<tr>
 										<th>Name</th>
 										<th>Price</th>
+										<th>Jenis</th>
 										<th>Photo</th>
 										<th>Description</th>
 										<th>Action</th>
@@ -44,6 +45,9 @@
 										</td>
 										<td>
 											<?php echo $product->price ?>
+										</td>
+										<td>
+											<?php echo $product->jenis ?>
 										</td>
 										<td>
 											<img src="<?php echo base_url('upload/product/'.$product->image) ?>" width="64" />

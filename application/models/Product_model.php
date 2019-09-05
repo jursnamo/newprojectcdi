@@ -3,12 +3,16 @@
 class Product_model extends CI_Model
 {
     private $_table = "products";
+    private $_tjenis ="jenis";
 
     public $product_id;
     public $name;
     public $price;
     public $image = "default.jpg";
     public $description;
+
+    public $jenis_id;
+     
 
     public function rules()
     {
@@ -20,6 +24,10 @@ class Product_model extends CI_Model
             ['field' => 'price',
             'label' => 'Price',
             'rules' => 'numeric'],
+
+            ['field' => 'jenis',
+            'label' => 'jenis',
+            'rules' => 'required'],
             
             ['field' => 'description',
             'label' => 'Description',
@@ -31,10 +39,18 @@ class Product_model extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
+        public function getAllJenis()
+    {
+        return $this->db->get($this->_tjenis)->result();
+    }
     
     public function getById($id)
     {
         return $this->db->get_where($this->_table, ["product_id" => $id])->row();
+    }
+    public function getByIdjenis($id)
+    {
+        return $this->db->get_where($this->_tjenis, ["jenis_id" => $id])->row();
     }
 
     public function save()
@@ -42,6 +58,8 @@ class Product_model extends CI_Model
         $post = $this->input->post();
         $this->product_id = uniqid();
         $this->name = $post["name"];
+        $this->jenis = $post["jenis"];
+        //$this->db->join('jenis','tbsekolah.id=tbrakyat.id');
         $this->price = $post["price"];
         $this->image = $this->_UploadImage();
         $this->description = $post["description"];
@@ -54,6 +72,7 @@ class Product_model extends CI_Model
         $this->product_id = $post["id"];
         $this->name = $post["name"];
         $this->price = $post["price"];
+        $this->jenis = $post["jenis"];
         
         if (!empty($_FILES["image"]["name"]))
         {

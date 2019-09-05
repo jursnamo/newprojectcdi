@@ -55,6 +55,15 @@
 								</div>
 							</div>
 
+							<div class="form-group">
+								<label for="jenis">Jenis</label>
+								<input class="form-control <?php echo form_error('jenis') ? 'is-invalid':'' ?>"
+								 type="text" name="jenis" min="0" placeholder="Jenis" value="<?php echo $product->jenis ?>" />
+								<div class="invalid-feedback">
+									<?php echo form_error('jenis') ?>
+								</div>
+							</div>
+
 
 							<div class="form-group">
 								<label for="name">Photo</label>
